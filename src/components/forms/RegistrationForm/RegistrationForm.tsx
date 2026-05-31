@@ -31,7 +31,11 @@ interface IFormState {
 }
 
 type TFormAction =
-    | { type: "UPDATE_FIELD"; field: keyof FormData; value: any }
+    | {
+    type: "UPDATE_FIELD";
+    field: keyof FormData;
+    value: FormData[keyof FormData];
+}
     | { type: "SET_ERROR"; field: string; message: string }
     | { type: "SET_ERRORS"; errors: Record<string, string> }
     | { type: "NEXT_STEP" }
